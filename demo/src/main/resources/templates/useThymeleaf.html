@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Sample</title>
+</head>
+<body>
+<h1 th:text="'hello world!'">표시하는 부분</h1>
+<h1>안녕하세요! [[${name}]]씨</h1>
+<h1 th:text="'오늘의 날씨는 맑음 입니다'">표시하는 부분</h1>
+
+<div th:switch="${name}">
+    <p th:case="이순신" th:text="|${name}입니다!|"></p>
+    <p th:case="영희" th:text="|${name}입니다!|"></p>
+    <p th:case="철수" th:text="|${name}입니다!|"></p>
+    <p th:case="*">명부에 없습니다.</p>
+</div>
+
+.으로 접근: <span th:text="${mb.id}">ID</span> - <span th:text="${mb.name}">이름</span><br>
+[]으로 접근: <span th:text="${mb['id']}">ID</span> - <span th:text="${mb['name']}">이름</span>
+<br>
+
+<th:block th:object="${mb}">
+    .으로 접근: <span th:text="*{id}">ID</span> - <span th:text="*{name}">이름</span><br>
+</th:block>
+<br>
+<span th:text="${list[0]}">방위</span>
+<span th:text="${list[1]}">방위</span>
+<span th:text="${list[2]}">방위</span>
+<span th:text="${list[3]}">방위</span>
+<br>
+<span th:text="${map.get('hong').id}"></span> - <span th:text="${map.get('hong').name}"></span><br>
+<span th:text="${map.get('lee').id}"></span> - <span th:text="${map.get('lee').name}"></span><br>
+
+<div th:each="member : ${members}">
+    <p>[[${member.id}]] : [[${member.name}]]</p>
+</div>
+</body>
+</html>

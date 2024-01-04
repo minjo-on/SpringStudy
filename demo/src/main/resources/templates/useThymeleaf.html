@@ -35,5 +35,9 @@
 <div th:each="member : ${members}">
     <p>[[${member.id}]] : [[${member.name}]]</p>
 </div>
+<br>
+<h1>Fragment를 아래에 삽입하기</h1>
+<div id="one" th:insert="fragment :: one"></div>
+<div id="two" th:insert="fragment :: two"></div>
 </body>
 </html>

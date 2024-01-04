@@ -46,4 +46,9 @@ public class ThymeleafController {
 
         return "useThymeleaf";
     }
+
+    @GetMapping("a")
+    public String showA(){
+        return "pageA";
+    }
 }

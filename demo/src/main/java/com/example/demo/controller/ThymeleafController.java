@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Controller
+//@Controller
 public class ThymeleafController {
     @GetMapping("show")
     public String showView(Model model){

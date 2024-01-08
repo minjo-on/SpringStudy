@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 
-@Controller
+//@Controller
 public class RequestParameterController {
 
     @GetMapping("show")

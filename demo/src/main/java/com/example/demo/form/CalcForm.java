@@ -13,5 +13,4 @@ public class CalcForm {
     @NotNull
     @Range(min = 1,max = 10)
     private Integer rightNum;
-
 }

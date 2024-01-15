@@ -5,6 +5,7 @@ import chap07.ExeTimeCalculator;
 import chap07.ImpeCalculator;
 import chap07.RecCalculator;
 import config.AppCtx;
+import config.AppCtxWithCache;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,12 +15,14 @@ public class DemoApplication {
 	public static void main(String[] args) {
 //		SpringApplication.run(DemoApplication.class, args);
 
-		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppCtxWithCache.class);
 
 		Calculator cal = ctx.getBean("calculator",Calculator.class);
-		long fiveFact = cal.factorial(5);
-		System.out.println(fiveFact);
-		System.out.println(cal.getClass().getName());
+		cal.factorial(7);
+		cal.factorial(7);
+		cal.factorial(5);
+		cal.factorial(5);
+
 		ctx.close();
 	}
 

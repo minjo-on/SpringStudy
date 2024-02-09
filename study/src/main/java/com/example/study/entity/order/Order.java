@@ -3,6 +3,7 @@ package com.example.study.entity.order;
 import com.example.study.entity.Delivery;
 import com.example.study.entity.DeliveryStatus;
 import com.example.study.entity.Member;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
